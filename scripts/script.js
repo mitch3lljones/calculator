@@ -130,16 +130,23 @@ function calculateResults() {
         expressionText.push(display.textContent);
     }
     
-    let result = eval(expressionText.join(''));
+    let result = eval(expressionText.join(''));;
     
-    if(!Number.isInteger(result)) {
-        result = result.toFixed(6);
+    if(result == Infinity) {
+        alert("YOU CAN\'T DIVIDE BY 0 👎");
+        clearAll();
     }
     
-    display.textContent = result;
-    expression.textContent = expressionText.join(" ") + "=";
-    operatorButtonPressed = false;
-    expressionText = [];
+    else {
+        if(!Number.isInteger(result)) {
+            result = result.toFixed(6) / 1;
+        }
+
+        display.textContent = result;
+        expression.textContent = expressionText.join(" ") + "=";
+        operatorButtonPressed = false;
+        expressionText = [];
+    }
 }
 
 function add (num1, num2) {
