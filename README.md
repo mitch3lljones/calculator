@@ -1,1 +1,4 @@
-# calculator
+# Calculator
+## Information
+## Instructions
+## Website
